@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" data-type="software" data-radius="soft" data-buttons="solid">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="page-type" content="software">
+  <meta name="site-kind" content="software">
+  <meta name="theme-color" content="#161c1a">
+  <meta name="description" content="Hear a Hinglish checkout call and inspect its mock checkout and prompt tests.">
+  <meta property="og:title" content="KwikVoice Studio | Voice AI for cart recovery">
+  <meta property="og:description" content="A recorded checkout call, a reusable merchant prompt, and five shopper tests.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://koushikktech.github.io/KwikVoice-Studio/">
+  <link rel="canonical" href="https://koushikktech.github.io/KwikVoice-Studio/">
+  <title>KwikVoice Studio | Voice AI for cart recovery</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Instrument+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="kit/motion.css">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
+</head>
+<body>
+<header class="nav top"><a class="skip-link" href="#main">Skip to demo</a><div class="wrap top-inner">
+  <a class="wordmark" href="./"><img src="icon.svg" width="29" height="29" alt="">KwikVoice Studio</a>
+  <a class="link" href="https://github.com/Koushikktech/KwikVoice-Studio">View source</a>
+</div></header>
+<main id="main" tabindex="-1">
+  <section class="hero" data-enter>
+    <div class="wrap"><div class="hero-text grid split hero-grid">
+      <div class="intro span-6">
+        <h1>Voice AI for cart recovery</h1>
+        <p class="hero-lead">Hear Gemini Live handle a ₹50 cash-on-delivery fee in Hinglish and create a mock UPI checkout after the shopper asks for a link.</p>
+        <button type="button" class="btn btn--primary" id="play">Play the call</button>
+      </div>
+      <div class="app-frame frame span-6 start-7" data-ui="recorded-call" data-visual data-enter-image>
+        <header class="frame-head"><strong>DermPure call</strong><span id="playback-state" role="status">Recording</span></header>
+        <ol class="transcript" id="transcript" aria-label="Call transcript"></ol>
+        <div class="checkout" id="checkout"></div>
+        <audio id="call" controls preload="metadata" src="call.mp3" aria-label="DermPure call recording"></audio>
+      </div>
+    </div></div>
+  </section>
+  <section class="evidence" id="tests" data-moment="word-highlight">
+    <div class="wrap grid split evidence-grid">
+      <div class="span-6">
+        <h2>Five shopper tests</h2>
+        <p>One merchant template supplies the cart, spoken prices and checkout rules. The fixture tests cover coupon denial, COD fees, interruptions, discount abuse and missing product details.</p>
+        <p class="mo-wh__text">The interruption test logged a <strong>26-word reply</strong> against an 18-word limit. A shorter template example passed on the rerun.</p>
+        <a class="btn" href="walkthrough.mp4">Watch the earlier walkthrough</a>
+        <p class="credit">Portfolio project by <a class="link" href="https://koushikk.me/">Krishna Koushik Kasarla</a>.</p>
+      </div>
+      <div class="test-frame frame span-6 start-7" data-ui="test-evidence">
+        <div class="frame-head"><strong>Fixture results</strong><span id="qa-score"></span></div>
+        <div class="test-body">
+          <div class="test-controls" aria-label="Prompt example">
+            <button type="button" class="btn" id="before" aria-pressed="true">Original prompt</button>
+            <button type="button" class="btn" id="after" aria-pressed="false">Revised prompt</button>
+          </div>
+          <blockquote id="qa-reply"></blockquote>
+          <p id="qa-result" aria-live="polite"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<script type="module" src="kit/moments/moments.js"></script>
+<script type="module" src="kit/motion.js"></script>
+<script type="module" src="review.js"></script>
+</body>
+</html>
